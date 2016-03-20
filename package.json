@@ -1,0 +1,26 @@
+{
+  "name": "bet-talker",
+  "version": "0.0.1",
+  "description": "BETool talker module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BETool/bet-talker.git"
+  },
+  "author": "Mikhail Garbuzov <madmxg@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/BETool/bet-talker/issues"
+  },
+  "homepage": "https://github.com/BETool/bet-talker",
+  "dependencies": {
+    "bet-api-chrome": "0.0.1",
+    "bet-ctor": "0.0.1",
+    "bet-logger": "0.0.1",
+    "bet-messenger": "0.0.1",
+    "bet-seed": "0.0.1"
+  }
+}
