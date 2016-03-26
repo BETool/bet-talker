@@ -1,6 +1,6 @@
 {
   "name": "bet-talker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BETool talker module",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,10 @@
   },
   "homepage": "https://github.com/BETool/bet-talker",
   "dependencies": {
-    "bet-api-chrome": "0.0.1",
-    "bet-ctor": "0.0.1",
-    "bet-logger": "0.0.1",
-    "bet-messenger": "0.0.1",
-    "bet-seed": "0.0.1"
+    "bet-api-chrome": "^0.0.1",
+    "bet-ctor": "^0.0.1",
+    "bet-logger": "^0.0.2",
+    "bet-messenger": "^0.0.1",
+    "bet-seed": "^0.0.1"
   }
 }
