@@ -1,7 +1,11 @@
 import ctor from 'bet-ctor';
 import seed from 'bet-seed';
 import Logger from 'bet-logger';
-import api from 'bet-api-chrome';
+import apiEdge from 'bet-api-edge';
+import apiOpera from 'bet-api-opera';
+import apiChrome from 'bet-api-chrome';
+import apiSafari from 'bet-api-safari';
+import apiFirefox from 'bet-api-firefox';
 import BetMessenger from 'bet-messenger';
 
 
@@ -13,7 +17,25 @@ export default class Talker extends BetMessenger {
 
     super(appId);
     this.cid = 1;
-    this.api = api;
+
+    switch (ENV_BROWSER) {
+      case 'edge'
+        this.api = apiEdge;
+        break;
+      case 'opera'
+        this.api = apiOpera;
+        break;
+      case 'chrome'
+        this.api = apiChrome;
+        break;
+      case 'safari'
+        this.api = apiSafari;
+        break;
+      case 'firefox'
+        this.api = apiFirefox;
+        break;
+    }
+
     this.ready = false;
     this.onReadyCbs = ctor.object();
   }
