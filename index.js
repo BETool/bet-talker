@@ -71,6 +71,9 @@ export default class Talker extends BetMessenger {
 
   answerByReason (message, sender, sendResponse) {
     log('answerByReason %s', message.reason);
+    if (!message.reason) {
+      return this.sendUnauthorized(sendResponse);
+    }
 
     switch (message.reason) {
       case 'get.modules':
@@ -99,9 +102,16 @@ export default class Talker extends BetMessenger {
         this.api.ajax.ajax(message.data, sendResponse);
         break;
       default:
-        sendResponse({err: true, value: "Unauthorized"});
+        if (this.answers[message.reason] && 'function' === typeof this.answers[message.reason]) {
+          return this.answers[message.reason](message, sender, sendResponse);
+        }
+        this.sendUnauthorized(sendResponse);
         break;
     }
+  }
+
+  sendUnauthorized (sendResponse) {
+    sendResponse({err: true, value: 'Unauthorized'});
   }
 
   sendModulesByProps (message, sender, sendResponse) {
