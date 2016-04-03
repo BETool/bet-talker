@@ -37,6 +37,7 @@ export default class Talker extends BetMessenger {
     }
 
     this.ready = false;
+    this.answers = ctor.object();
     this.onReadyCbs = ctor.object();
   }
 
